@@ -1,7 +1,8 @@
 package ar.edu.undec.computadoras.usecaseUnitTest;
 
 import ar.edu.undec.computadoras.core.dominio.Computadora;
-import ar.edu.undec.computadoras.core.exception.ComputadoraExisteException;
+import ar.edu.undec.computadoras.core.excepcion.ComputadoraExisteException;
+//import ar.edu.undec.computadoras.core.exception.ComputadoraExisteException;
 import ar.edu.undec.computadoras.core.repositorio.IComputadoraRepositorio;
 import ar.edu.undec.computadoras.core.usecase.CrearComputadoraUseCase;
 
