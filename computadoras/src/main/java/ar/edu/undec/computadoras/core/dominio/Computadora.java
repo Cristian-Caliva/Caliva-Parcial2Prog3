@@ -1,5 +1,7 @@
 package ar.edu.undec.computadoras.core.dominio;
 
+import ar.edu.undec.computadoras.core.excepcion.ComputadoraExisteException;
+
 public class Computadora {
     private String caracteristica;
     private String procesador;
@@ -17,7 +19,7 @@ public class Computadora {
         this.tipoComputadora = tipoComputadora;
     }
 
-    public static Computadora instancia(String caracteristicas, String procesador, int tamanioDisco, String tipoDisco, int ram, String tipoComputadora) {
+    public static Computadora instancia(String caracteristicas, String procesador, int tamanioDisco, String tipoDisco, int ram, String tipoComputadora) throws ComputadoraExisteException {
         return new Computadora(caracteristicas, procesador, tamanioDisco, tipoDisco, ram, tipoComputadora);
     }
 

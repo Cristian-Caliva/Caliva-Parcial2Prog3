@@ -1,16 +1,21 @@
 package ar.edu.undec.computadoras.core.usecase;
 
 import ar.edu.undec.computadoras.core.dominio.Computadora;
+import ar.edu.undec.computadoras.core.excepcion.ComputadoraExisteException;
 import ar.edu.undec.computadoras.core.input.ICrearCommputadoraInput;
 import ar.edu.undec.computadoras.core.repositorio.IComputadoraRepositorio;
+import ar.edu.undec.computadoras.core.repositorio.IRepositorioConsultarComputadora;
 
 public class CrearComputadoraUseCase implements ICrearCommputadoraInput {
     private IComputadoraRepositorio iComputadoraRepositorio;
+    private IRepositorioConsultarComputadora iRepositorioConsultarComputadora;
+
     public CrearComputadoraUseCase(IComputadoraRepositorio computadoraRepositorio) {
         this.iComputadoraRepositorio = computadoraRepositorio;
     }
 
-    public boolean crearComputadora(Computadora laComputadora) {
+    @Override
+    public boolean crearComputadora(Computadora laComputadora) throws ComputadoraExisteException {
         if(iComputadoraRepositorio.existeComputadora(laComputadora.getCaracteristica())) {
             return false;
         }
@@ -18,5 +23,12 @@ public class CrearComputadoraUseCase implements ICrearCommputadoraInput {
             iComputadoraRepositorio.guardarComputadora(laComputadora);
             return true;
         }
+    }
+
+    private boolean existeComputadora(String caracteristica) {
+        if(this.iRepositorioConsultarComputadora.findByUsuario(caracteristica) != null){
+            return true;
+        }
+        return false;
     }
 }
