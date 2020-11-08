@@ -3,6 +3,7 @@ package ar.edu.undec.computadoras.usecaseUnitTest;
 import ar.edu.undec.computadoras.core.dominio.Computadora;
 import ar.edu.undec.computadoras.core.excepcion.ComputadoraExisteException;
 //import ar.edu.undec.computadoras.core.exception.ComputadoraExisteException;
+import ar.edu.undec.computadoras.core.excepcion.ComputadoraIncompletaException;
 import ar.edu.undec.computadoras.core.repositorio.IComputadoraRepositorio;
 import ar.edu.undec.computadoras.core.usecase.CrearComputadoraUseCase;
 
@@ -23,7 +24,7 @@ public class CrearComputadoraUseCaseUnitTest {
     IComputadoraRepositorio computadoraRepositorio;
 
     @Test
-    public void crearComputadora_ComputadoraNoExiste_CreaComputadora() throws ComputadoraExisteException {
+    public void crearComputadora_ComputadoraNoExiste_CreaComputadora() throws ComputadoraIncompletaException, ComputadoraExisteException {
 
         Computadora laComputadora=Computadora.instancia("I310401000GB16GB","Core I3 1040",1000,"SSD",16,"PC");
 
@@ -38,7 +39,7 @@ public class CrearComputadoraUseCaseUnitTest {
     }
 
     @Test
-    public void crearComputadora_ComputadoraExiste_ComputadoraExisteException() throws ComputadoraExisteException{
+    public void crearComputadora_ComputadoraExiste_ComputadoraExisteException() throws ComputadoraIncompletaException, ComputadoraExisteException{
 
         Computadora laComputadora=Computadora.instancia("I310401000GB16GB","Core I3 1040",1000,"SSD",16,"PC");
 
