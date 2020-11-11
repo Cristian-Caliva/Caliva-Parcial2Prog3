@@ -1,5 +1,6 @@
 package ar.edu.undec.plantas.usecaseUnitTest;
 
+import ar.edu.undec.plantas.core.repositorio.IConsultarPlantasRepositorio;
 import ar.edu.undec.plantas.core.usecase.ConsultarPlantasUseCase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
