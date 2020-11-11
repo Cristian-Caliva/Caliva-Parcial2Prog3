@@ -1,6 +1,7 @@
 package ar.edu.undec.plantas.controllerUnitTest;
 
 //import ar.edu.undec.plantas.controller.dto.PlantaDTO;
+import ar.edu.undec.plantas.controller.dtomodel.PlantaDTO;
 import ar.edu.undec.plantas.core.exception.PlantaExisteException;
 import org.junit.jupiter.api.Assertions;
 
