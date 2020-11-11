@@ -10,6 +10,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 
 import static org.mockito.Mockito.when;
@@ -30,6 +32,11 @@ public class ConsultarPlantasUseCaseUnitTest {
 
     @Test
     void consultarPlantas_NoExistenPlantas_DevuelveColeccionVacia(){
-        //Completar test
+        ConsultarPlantasUseCase consultarPlantasUseCase = new ConsultarPlantasUseCase(consultarPlantasRepositorio);
+        when(consultarPlantasUseCase.consultarPlantas()).thenReturn(new ArrayList<>());
+
+        Collection<Planta> plantaList = consultarPlantasUseCase.consultarPlantas();
+
+        Assertions.assertEquals(0, plantaList.size());
     }
 }
