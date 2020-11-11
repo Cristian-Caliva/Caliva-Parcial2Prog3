@@ -1,5 +1,7 @@
 package ar.edu.undec.plantas.usecaseUnitTest;
 
+import ar.edu.undec.plantas.core.dominio.Planta;
+import ar.edu.undec.plantas.core.exception.PlantaIncompletaException;
 import ar.edu.undec.plantas.core.repositorio.IConsultarPlantasRepositorio;
 import ar.edu.undec.plantas.core.usecase.ConsultarPlantasUseCase;
 import org.junit.jupiter.api.Assertions;
@@ -20,7 +22,7 @@ public class ConsultarPlantasUseCaseUnitTest {
     IConsultarPlantasRepositorio consultarPlantasRepositorio;
 
     @Test
-    void consultarPlantas_ExistenPlantas_DevuelveColeccionConDatos(){
+    void consultarPlantas_ExistenPlantas_DevuelveColeccionConDatos() throws PlantaIncompletaException {
         ConsultarPlantasUseCase consultarPlantasUseCase=new ConsultarPlantasUseCase(consultarPlantasRepositorio);
         when(consultarPlantasRepositorio.obtenerPlantas()).thenReturn(Collections.singletonList(Planta.instancia("Erythrina crista-galli","Ceibo","Faboideae","Primavera",10)));
         Assertions.assertFalse(consultarPlantasUseCase.consultarPlantas().isEmpty());
