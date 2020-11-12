@@ -14,4 +14,24 @@ public class PlantaDTO {
         this.epocaPlantado = epocaPlantado;
         this.alturaMaxima = alturaMaxima;
     }
+
+    public String getNombreCientifico() {
+        return nombreCientifico;
+    }
+
+    public String getNombreVulgar() {
+        return nombreVulgar;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public String getEpocaPlantado() {
+        return epocaPlantado;
+    }
+
+    public int getAlturaMaxima() {
+        return alturaMaxima;
+    }
 }

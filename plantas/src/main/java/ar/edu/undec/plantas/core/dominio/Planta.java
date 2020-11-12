@@ -28,4 +28,5 @@ public class Planta {
     public String getNombreCientifico() {
         return nombreCientifico;
     }
+
 }
