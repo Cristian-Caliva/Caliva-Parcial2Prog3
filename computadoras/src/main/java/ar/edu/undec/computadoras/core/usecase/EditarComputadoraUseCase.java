@@ -3,11 +3,11 @@ package ar.edu.undec.computadoras.core.usecase;
 import ar.edu.undec.computadoras.core.dominio.Computadora;
 import ar.edu.undec.computadoras.core.excepcion.ComputadoraIncompletaException;
 import ar.edu.undec.computadoras.core.excepcion.UpdateComputadoraException;
-import ar.edu.undec.computadoras.core.input.EditarComputadoraInput;
+import ar.edu.undec.computadoras.core.usecase.input.EditarCommputadoraInput;
 import ar.edu.undec.computadoras.core.repositorio.IRepositorioConsultarComputadoraPorCaracteristica;
 import ar.edu.undec.computadoras.core.repositorio.IRepositorioEditarComputadora;
 
-public class EditarComputadoraUseCase implements EditarComputadoraInput {
+public class EditarComputadoraUseCase implements EditarCommputadoraInput {
     private IRepositorioEditarComputadora iRepositorioEditarComputadora;
     private IRepositorioConsultarComputadoraPorCaracteristica iRepositorioConsultarComputadoraPorCaracteristica;
 

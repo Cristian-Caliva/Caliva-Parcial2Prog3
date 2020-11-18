@@ -29,4 +29,19 @@ public class Planta {
         return nombreCientifico;
     }
 
+    public String getNombreVulgar() {
+        return nombreVulgar;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public String getEpocaPlantado() {
+        return epocaPlantado;
+    }
+
+    public int getAlturaMaxima() {
+        return alturaMaxima;
+    }
 }

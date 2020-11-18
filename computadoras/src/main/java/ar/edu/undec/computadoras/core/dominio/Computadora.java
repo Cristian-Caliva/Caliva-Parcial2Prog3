@@ -20,10 +20,10 @@ public class Computadora {
         this.tipoComputadora = tipoComputadora;
     }
 
-    public static Computadora instancia(String caracteristicas, String procesador, int tamanioDisco, String tipoDisco, int ram, String tipoComputadora) throws ComputadoraIncompletaException {
-        if(caracteristicas.isEmpty() || procesador.isEmpty() || tamanioDisco < 0 || tipoDisco.isEmpty() || ram < 0 || tipoComputadora.isEmpty()) {
+    public static Computadora instancia(String caracteristicas, String procesador, int tamanioDisco, String tipoDisco, int ram, String tipoComputadora) /*throws ComputadoraIncompletaException*/ {
+        /*if(caracteristicas.isEmpty() || procesador.isEmpty() || tamanioDisco < 0 || tipoDisco.isEmpty() || ram < 0 || tipoComputadora.isEmpty()) {
             throw new ComputadoraIncompletaException();
-        }
+        }*/
         return new Computadora(caracteristicas, procesador, tamanioDisco, tipoDisco, ram, tipoComputadora);
     }
 
