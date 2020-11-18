@@ -38,12 +38,12 @@ public class CrearPlantaControllerUnitTest {
         Assertions.assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         Assertions.assertTrue(resultado);
     }
-/*
+
     @Test
-    public void crearPlanta_PlantaExisteException_Devuelve412() throws PlantaExisteException {
+    public void crearPlanta_PlantaExisteException_Devuelve412() throws PlantaExisteException, PlantaIncompletaException {
         //Completar Test
         PlantaDTO laPlantaDTO=new PlantaDTO("Erythrina crista-galli","Ceibo","Faboideae","Primavera",10);
-        when(crearPlantaInput.crearPlanta(any(Planta.class))).thenThrow(PlantaExisteException.class);
+        when(iCrearPlantaInput.crearPlanta(any(Planta.class))).thenThrow(PlantaExisteException.class);
         ResponseEntity responseEntity=null;
 
 
@@ -51,10 +51,15 @@ public class CrearPlantaControllerUnitTest {
     }
 
     @Test
-    public void crearPlanta_ExcepcionNoPrevista_Devuelve500() throws PlantaExisteException {
+    public void crearPlanta_ExcepcionNoPrevista_Devuelve500() throws PlantaExisteException, PlantaIncompletaException {
         //Completar Test
+        PlantaDTO laPlantaDTO=new PlantaDTO("Erythrina crista-galli","Ceibo","Faboideae","Primavera",10);
+        when(iCrearPlantaInput.crearPlanta(any(Planta.class))).thenThrow(new RuntimeException("Exception"));
 
-    }*/
+
+        CrearPlantaController crearPlantaController = new CrearPlantaController(iCrearPlantaInput);
+        ResponseEntity responseEntity = crearPlantaController.crearPlanta(laPlantaDTO);
+    }
 
 
 
