@@ -24,6 +24,7 @@ public class ConsultarPlantasUseCaseUnitTest {
     IConsultarPlantasRepositorio consultarPlantasRepositorio;
 
     @Test
+    //TEST1
     void consultarPlantas_ExistenPlantas_DevuelveColeccionConDatos() throws PlantaIncompletaException {
         ConsultarPlantasUseCase consultarPlantasUseCase=new ConsultarPlantasUseCase(consultarPlantasRepositorio);
         when(consultarPlantasRepositorio.obtenerPlantas()).thenReturn(Collections.singletonList(Planta.instancia("Erythrina crista-galli","Ceibo","Faboideae","Primavera",10)));
@@ -31,6 +32,7 @@ public class ConsultarPlantasUseCaseUnitTest {
     }
 
     @Test
+    //TEST2
     void consultarPlantas_NoExistenPlantas_DevuelveColeccionVacia(){
         ConsultarPlantasUseCase consultarPlantasUseCase = new ConsultarPlantasUseCase(consultarPlantasRepositorio);
         when(consultarPlantasUseCase.consultarPlantas()).thenReturn(new ArrayList<>());
