@@ -19,6 +19,10 @@ public class CrearPlantaController {
 
     @Autowired
     ICrearPlantaInput crearPlantaInput;
+
+    public CrearPlantaController(ICrearPlantaInput iCrearPlantaInput) {
+        this.crearPlantaInput = iCrearPlantaInput;
+    }
     /*public CrearComputadoraController(ICrearPlantaInputInput ) {
         this.iCrearComputadoraInput=crearComputadoraInput;
     }*/
